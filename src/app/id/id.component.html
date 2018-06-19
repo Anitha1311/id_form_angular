@@ -1,0 +1,105 @@
+<div class="container">
+  <h1><b>EMPLOYEE ID CARD FORM</b></h1>
+  <form novalidate [formGroup]="idFormGroup" class="container" action="/action_page.php" name=validation>
+      <div>
+          <label class="control-label col-sm-2" for="firstName">FIRST NAME</label>
+          <div class="col-sm-5">
+          <input type="text" class="form-control" id=firstName formControlName="firstName">
+          </div>
+          <span id=errorMesssageForFirstName *ngIf="idFormGroup.get('firstName').errors">Please enter the first name</span>
+      </div><br><br><br>
+      <div class="form_group">
+          <label class="control-label col-sm-2" for="fullName">FULL NAME</label>
+          <div class="col-sm-5">
+          <input type="text" class="form-control" id=fullName>
+          </div>
+          <span id=errorMesssageForFullName>Please enter the full name</span>
+      </div><br><br><br>
+      <div>
+          <label class="control-label col-sm-2" for="designation">DESIGNATION</label>
+          <div class="col-sm-5">
+          <select class="form-control" id="designation" required>
+              <option value="" selected Disabled Here>Choose Here</option>
+              <option value="Associate">Associate Engineer</option>
+              <option value="Developer">Developer</option>
+              <option value="Tester">Tester</option>
+              <option value="Reviewer">Reviewer</option>
+          </select>
+          </div>
+          <span class="span-for-errors" id="errorMessageForDesignation">Choose your Designation</span>
+      </div><br><br><br>
+      <div>
+          <label class="control-label col-sm-2" for="employeeNumber">EMPLOYEE NUMBER</label>
+          <div class="col-sm-5">
+          <input type="text" class="form-control" id="employeeNumber">
+          </div>
+          <span id="errorMessageForEmployeeNumber">Enter valid employee number</span>
+
+      </div><br><br><br>
+      <div>
+          <label class="control-label col-sm-2" for="bloodgroup">BLOOD GROUP</label>
+          <div class="col-sm-5">
+          <select class="form-control" id="bloodgroup1" required>
+                  <option value="" selected Disabled Here>Choose Here</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="O">O</option>
+                  <option value="AB">AB</option>
+              </select>
+              
+              <select class="form-control" id="bloodgroup2" required>
+                      <option value="" selected Disabled Here>Choose Here</option>
+                      <option value="positive">+ve</option>
+                      <option value="negative">-Ve</option>
+              </select>
+          </div>
+              <span id="errorMessageForBloodGroup">Choose your BloodGroup</span><br><br>
+      </div><br><br><br>
+      <div>
+              <label class="control-label col-sm-2" for="reasonsForIssue">REASONS FOR ISSUE</label>
+              <div class="col-sm-5">
+              <select class="form-control" id="reasonsForIssue" required>
+                  <option value="" selected Disabled Here>Choose Here</option>
+                  <option value="newEmployee">Associate Engineer</option>
+                  <option value="lost">Developer</option>
+                  <option value="defaced">Tester</option>
+                  <option value="conversion">Reviewer</option>
+                  <option value="designation change">Designaion Change</option>
+
+              </select>
+              </div>
+              <span id="errorMessageForReasonsForIssue">Select the reason</span> 
+          </div><br><br><br>
+          <div>
+                  <label class="control-label col-sm-2" for="email">EMAIL ID(Virtusa)</label>
+                  <div class="col-sm-5">
+                  <input type="text" class="form-control" id="email" required>
+                  </div>
+                  <span id="errorMessageEmailID">Enter your Email Id</span> 
+
+          </div><br><br><br>
+          <div>
+                  <label class="control-label col-sm-2" for="mobile">EMPLOYEE MOBILE NUMBER</label>
+                  <div class="col-sm-5">
+                  <input type="text" class="form-control" id="mobile" required>
+                  </div>
+                <span id="errorMessageForEmployeeMobileNumber">Enter your mobile number</span> 
+                  
+          </div><br><br><br>
+          <div>
+                  <label class="control-label col-sm-2" for="emergency">EMERGENCY CONTACT NUMBER</label>
+                  <div class="col-sm-5">
+                  <input type="text" class="form-control" id="emergency" required>
+                  </div>
+                <span id="errorMessageForEmployeeEmergencyContactNumber">Enter your emergency mobile number</span>                    
+          </div><br><br><br>
+          <div class="form-group"> 
+      <div class="col-sm-offset-2 col-sm-10">
+          <button type="button" class="btn btn-default" onclick="addDetails()">ADD DETAILS</button>
+      </div>
+          </div>
+  </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
