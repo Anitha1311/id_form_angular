@@ -1,14 +1,17 @@
 <div class="container">
   <h1><b>EMPLOYEE ID CARD FORM</b></h1>
-  <form novalidate [formGroup]="idFormGroup" class="container" action="/action_page.php" name=validation>
-      <div>
-          <label class="control-label col-sm-2" for="firstName">FIRST NAME</label>
-          <div class="col-sm-5">
-          <input type="text" class="form-control" id=firstName formControlName="firstName">
-          </div>
-          <span id=errorMesssageForFirstName *ngIf="idFormGroup.get('firstName').errors">Please enter the first name</span>
-      </div><br><br><br>
-      <div class="form_group">
+  <form novalidate [formGroup]="idFormGroup" class="form-horizontal" "container" action="/action_page.php" name=validation>
+    <div class="form_group" id="iddiv">
+        <label class="control-label col-sm-2" for="firstName" id="lfname">FIRST NAME</label>
+        <div class="col-sm-5">
+        <input type="text" class="form-control" name="firstname" id="firstname" formControlName="firstName">
+        <i class="glyphicon glyphicon-remove form-control-feedback" *ngIf="idFormGroup.get('firstName').touched && idFormGroup.get('firstName').errors"
+      id="firstError"></i>
+    <i class="glyphicon glyphicon-ok form-control-feedback" id="firstError" *ngIf="idFormGroup.get('firstName').touched && !idFormGroup.get('firstName').errors"></i>
+        </div>
+        <span id=firstNameError class="alert alert-danger" *ngIf="idFormGroup.get('firstName').touched && idFormGroup.get('firstName').errors">Please enter the first name</span>
+    </div><br><br><br>
+      <!-- <div class="form_group">
           <label class="control-label col-sm-2" for="fullName">FULL NAME</label>
           <div class="col-sm-5">
           <input type="text" class="form-control" id=fullName>
@@ -92,12 +95,12 @@
                   <input type="text" class="form-control" id="emergency" required>
                   </div>
                 <span id="errorMessageForEmployeeEmergencyContactNumber">Enter your emergency mobile number</span>                    
-          </div><br><br><br>
+          </div><br><br><br>-->
           <div class="form-group"> 
       <div class="col-sm-offset-2 col-sm-10">
           <button type="button" class="btn btn-default" onclick="addDetails()">ADD DETAILS</button>
       </div>
-          </div>
+          </div> 
   </form>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
